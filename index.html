@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <title>Weboldal</title>
+    <style>
+        /* Alap stílusok */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #555;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background-color: #888;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Vállalkozás neve:</h1>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('home')">Főoldal</a>
+        <a href="javascript:void(0);" onclick="showSection('about')">Rólunk</a>
+        <a href="javascript:void(0);" onclick="showSection('contact')">Kapcsolat</a>
+    </nav>
+
+    <div id="home" class="section active">
+        <h2>Vállalkozás bemutatása:</h2>
+        <p>Alcím ha kell valami:</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>Rólunk</h2>
+        <p>Itt található a cégünkről szóló információ.</p>
+         <p>Alcím ha kell valami:</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Kapcsolat</h2>
+        <p>Elérhetőségeink:</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Elrejtjük az összes szekciót
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            // Megjelenítjük a kiválasztott szekciót
+            var activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
